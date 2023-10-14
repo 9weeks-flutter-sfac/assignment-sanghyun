@@ -48,8 +48,9 @@ class _authorsViewState extends State<authorsView> {
                         return Column(
                           children: [
                             ShakeY(
-                              from: 60,
-                              duration: Duration(milliseconds: 2500),
+                              delay: Duration(seconds: index * 1),
+                              from: 40,
+                              duration: Duration(seconds: 2),
                               child: Image.network(
                                   snapshot.data![index].avatar.toString()),
                             ),
@@ -57,8 +58,9 @@ class _authorsViewState extends State<authorsView> {
                               height: 8,
                             ),
                             ShakeY(
-                              from: 60,
-                              duration: Duration(milliseconds: 2500),
+                              delay: Duration(seconds: index * 1),
+                              from: 40,
+                              duration: Duration(seconds: 2),
                               child: Text(
                                 snapshot.data![index].name.toString(),
                                 style: TextStyle(fontSize: 16),

@@ -1,7 +1,13 @@
 import 'dart:ui';
 
-import 'package:abc/weekOne.dart';
-import 'package:abc/weekTwo.dart';
+import 'package:abc/pageconnect/weekEight.dart';
+import 'package:abc/pageconnect/weekFive.dart';
+import 'package:abc/pageconnect/weekFore.dart';
+import 'package:abc/week1_day1/weekOne.dart';
+import 'package:abc/pageconnect/weekSeven.dart';
+import 'package:abc/pageconnect/weekSix.dart';
+import 'package:abc/pageconnect/weekThree.dart';
+import 'package:abc/pageconnect/weekTwo.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -53,9 +59,65 @@ class MainPage extends StatelessWidget {
               child: Center(child: Text('2일차')),
             ),
           ),
-          Container(
-            decoration: BoxDecoration(border: Border.all()),
-            child: Center(child: Text('3일차')),
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => weekThree()));
+            },
+            child: Container(
+              decoration: BoxDecoration(border: Border.all()),
+              child: Center(child: Text('3일차')),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => weekFore()));
+            },
+            child: Container(
+              decoration: BoxDecoration(border: Border.all()),
+              child: Center(child: Text('4일차')),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => weekFive()));
+            },
+            child: Container(
+              decoration: BoxDecoration(border: Border.all()),
+              child: Center(child: Text('5일차')),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => weekSix()));
+            },
+            child: Container(
+              decoration: BoxDecoration(border: Border.all()),
+              child: Center(child: Text('6일차')),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => weekSeven()));
+            },
+            child: Container(
+              decoration: BoxDecoration(border: Border.all()),
+              child: Center(child: Text('7일차')),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => weekEight()));
+            },
+            child: Container(
+              decoration: BoxDecoration(border: Border.all()),
+              child: Center(child: Text('8일차')),
+            ),
           ),
         ],
       ),
