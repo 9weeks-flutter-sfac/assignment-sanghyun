@@ -1,3 +1,4 @@
+import 'package:assignment1/Controller/app_setting_controller.dart';
 import 'package:assignment1/Controller/coin_controllet.dart';
 import 'package:assignment1/View/shoppage.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class CoinPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var coinController = Get.put(Coincontroller());
+    var settingController = Get.find<AppSettingController>();
     return Scaffold(
       body: Center(
           child: Column(
@@ -25,7 +27,15 @@ class CoinPage extends StatelessWidget {
               onPressed: () {
                 Get.to(() => ShopPage());
               },
-              child: Text('상점으로 이동'))
+              child: Text('상점으로 이동')),
+          TextField(
+            controller: settingController.AppAuthorTextController,
+            onSubmitted: (value) {
+              // settingController.appAuthor = value.obs;
+              settingController.appAuthor.value = value;
+            },
+          ),
+          Obx(() => Text('여기뒤로' + settingController.appAuthor.value))
         ],
       )),
     );

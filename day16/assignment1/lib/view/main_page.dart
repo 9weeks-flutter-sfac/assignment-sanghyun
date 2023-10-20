@@ -11,6 +11,7 @@ class MainPage extends GetView<MainController> {
   Widget build(BuildContext context) {
     var user = Get.find<AuthController>().user!;
     return Scaffold(
+        floatingActionButton: FloatingActionButton(onPressed: () {}),
         bottomNavigationBar: Obx(
           () => BottomNavigationBar(
               onTap: controller.onPageTapped,

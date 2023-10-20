@@ -28,6 +28,7 @@ class UserList {
   }
 
   factory UserList.fromMap(Map<String, dynamic> map) {
+    print(map);
     return UserList(
       page: map['page'] as int,
       perPage: map['perPage'] as int,

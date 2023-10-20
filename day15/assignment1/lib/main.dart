@@ -1,3 +1,4 @@
+import 'package:assignment1/Controller/app_setting_controller.dart';
 import 'package:assignment1/View/coinPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,6 +12,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(home: CoinPage());
+    return GetMaterialApp(
+        initialBinding: BindingsBuilder(() {
+          Get.put(AppSettingController());
+        }),
+        home: CoinPage());
   }
 }

@@ -1,11 +1,13 @@
 import 'package:assignment1/controller/authcontroller.dart';
 import 'package:assignment1/controller/logincontroller.dart';
 import 'package:assignment1/model/login.dart';
+import 'package:assignment1/view/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginPage extends GetView<LoginController> {
   const LoginPage({super.key});
+  static const route = '/login';
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,12 @@ class LoginPage extends GetView<LoginController> {
               SizedBox(
                 width: 36,
               ),
-              Text('회원가입')
+              TextButton(
+                child: Text('회원가입'),
+                onPressed: () {
+                  Get.toNamed(SignupPage.route);
+                },
+              )
             ],
           )
         ]),

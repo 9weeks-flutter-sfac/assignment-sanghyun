@@ -1,3 +1,4 @@
+import 'package:assignment1/Controller/app_setting_controller.dart';
 import 'package:assignment1/Controller/coin_controllet.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,6 +9,7 @@ class ShopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var coinController = Get.find<Coincontroller>();
+    var settingController = Get.find<AppSettingController>();
     return Scaffold(
       body: Center(
           child: Column(
@@ -26,7 +28,8 @@ class ShopPage extends StatelessWidget {
               onPressed: () {
                 Get.back();
               },
-              child: Text('뒤로가기'))
+              child: Text('뒤로가기')),
+          Obx(() => Text(settingController.appName.value))
         ],
       )),
     );
