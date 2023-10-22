@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MainController extends GetxController {
+  var authController = Get.find<AuthController>();
   var pageController = PageController();
   RxInt curPage = 0.obs;
   Dio dio = Dio();
@@ -21,7 +22,7 @@ class MainController extends GetxController {
   // readDocuments() async {
   //  var res =await dio.get(ApiRoutes.documenturl,
   //  options: Options(headers: {
-  //   'Authorization' =
+  //   'Authorization' = authController.v
   //  }));
   // }
 }
